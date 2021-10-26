@@ -4,15 +4,17 @@ import 'package:payflow/shared/themes/app_images.dart';
 import 'package:payflow/shared/themes/app_text_style.dart';
 
 class SocialLoginButton extends StatelessWidget {
+  // Criação da função VoidCallBack que virá dentro da variável onTap.
   final VoidCallback onTap;
   const SocialLoginButton({Key? key, required this.onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // InkWell é um widget que permite passar o onTap
     return InkWell(
       onTap: onTap,
       child: Container(
-        // Controlando a altura da imagem e texto do nosoo button
+        // Controlando a altura da imagem e texto do nosso button
         height: 56,
         // Aplicando cor e borda no botão
         decoration: BoxDecoration(
@@ -30,12 +32,17 @@ class SocialLoginButton extends StatelessWidget {
               flex: 1,
               child: Row(
                 children: [
-                  Image.asset(AppImages.google),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 16,
+                    ),
+                    child: Image.asset(AppImages.google),
+                  ),
                   SizedBox(
                     width: 16,
                   ),
                   Container(
-                    height: 56,
+                    height: 46,
                     width: 1,
                     color: AppColors.stroke,
                   ),
